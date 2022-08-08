@@ -33,7 +33,7 @@ ns = ps * qs
 pu_k = [97, ns]
 pr_k = [1693, ns]
 
-HOST_IP = "10.0.5.198"
+HOST_IP = "localhost"
 PORT = 5000
 BUFFER = 1024 * 64
 SEP = "<separator>"
